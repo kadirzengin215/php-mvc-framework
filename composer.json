@@ -1,0 +1,55 @@
+{
+    "name": "kadirzengin215/php-framework",
+    "description": "The simple PHP mvc framework for web applications.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kadir Zengin",
+            "email": "kadirzengin215@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "./app/",
+            "Core\\": "./src/"
+        },
+        "files": [
+            "./src/Foundation/helpers.php",
+            "./app/Helpers/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "./tests/"
+        }
+    },
+    "require": {
+        "php": ">=8.2"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.14",
+        "pestphp/pest": "^2.34",
+        "phpstan/phpstan": "^1.10",
+        "symfony/var-dumper": "^7.0"
+    },
+     "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "run:pint": "pint",
+        "test:pint": "pint --test",
+        "test:phpstan": "phpstan analyse --ansi",
+        "test:pest": "pest --colors=always",
+        "test": [
+            "@test:pint",
+            "@test:phpstan",
+            "@test:pest"
+        ]
+    }
+}

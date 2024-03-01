@@ -1,0 +1,7 @@
+parameters:
+	level: max
+	bootstrapFiles:
+		- public/index.php
+	paths:
+		- app
+		- src
